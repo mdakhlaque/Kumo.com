@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .main {
+            display: flex;
+            align-items: center;
+            font-family: sans-serif;
+        }
+
+        .main h1 {
+            font-size: 22px;
+        }
+
+        .main span {
+            color: green;
+            margin-left: 20px;
+            font-size: 20px;
+            font-weight: 600;
+
+        }
+
+        .pop {
+            padding: 20px;
+
+            border-radius: 5px;
+            background-color: rgb(225, 255, 225);
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(0);
+            transition: .4s all;
+        }
+
+        .pop h3 {
+            color: rgb(11, 117, 11);
+            font-family: sans-serif;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div">
+        <input type="text" name="username" placeholder="Inter Name" id="user"> <br> <br>
+        <input type="password" name="password" placeholder="Inter password" id="password"> <br><br>
+        <input type="email" name="email" placeholder="Inter Email" id="email"> <br>
+
+    </div>
+    <button id="login">Login</button>
+
+    <div class="pop">
+        <h3 class="cong"></h3>
+
+        <div class="main">
+            <h1>User Name = </h1>
+            <span id="userspan"></span>
+        </div>
+        <div class="main">
+            <h1>Password = </h1>
+            <span id="password-save"></span>
+        </div>
+        <div class="main">
+            <h1>Email Id = </h1>
+            <span id="email-save"></span>
+        </div>
+    </div>
+</body>
+
+<script>
+
+
+
+    document.getElementById("login").addEventListener("click", function () {
+        var user = document.getElementById("user").value;
+        var password = document.getElementById("password").value;
+        var email = document.getElementById("email").value;
+
+        document.querySelector("#userspan").innerHTML = `My name is ${user} software Engineer`;
+        document.querySelector("#password-save").innerHTML = `My Password is ${password} uploaded`;
+        document.querySelector("#email-save").innerHTML = email;
+        // document.write(user);
+
+        document.querySelector(".cong").innerHTML = `Congratulation ${user} form Sent successfull`;
+        var pop = document.querySelector(".pop");
+        pop.style.opacity = "1";
+        pop.style.visibility = "visible";
+        pop.style.transform = "scale(1)";
+
+
+    })
+
+
+</script>
+
+</html>
